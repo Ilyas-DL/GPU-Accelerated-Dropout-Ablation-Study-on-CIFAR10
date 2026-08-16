@@ -84,6 +84,8 @@ The following plots detail the Training Cross-Entropy Loss and Validation Accura
 
 ![Dropout Ablation Hidden 1024](plots/dropout_ablation_hidden_1024.png)
 
+We observe in all experiments that the default MLP performs best during training but does worse in validation compared to all other dropout variants.
+
 ## Implementation Methodology and AI Assistance
 
 All scripts generated with Gemini-pro 3.1. All code manually checked, data analysis and experiments designed by me. 
