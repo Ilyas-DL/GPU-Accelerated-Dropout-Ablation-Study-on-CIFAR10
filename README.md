@@ -66,7 +66,7 @@ The experiment analyzes the relationship between hidden layer size and dropout p
 To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops. 
 
 ### Global VRAM Usage Over Time
-Global VRAM allocation tracked throughout the execution of the entire experiment.
+Global VRAM allocation tracked with `torch.cuda.memory_allocated()` during the execution of the entire experiment.
 
 ![Global VRAM Usage](plots/global_vram_usage_over_time.png)
 
