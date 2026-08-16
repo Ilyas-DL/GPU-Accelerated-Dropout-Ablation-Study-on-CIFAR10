@@ -41,7 +41,7 @@ The forward pass becomes:
 
 Where `p` is the probability of an element to be zeroed. More details at:
 
-![Dropout: A Simple Way to Prevent Neural Networks from
+[Dropout: A Simple Way to Prevent Neural Networks from
 Overfitting](https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
 
 ## Experimental Methodology
