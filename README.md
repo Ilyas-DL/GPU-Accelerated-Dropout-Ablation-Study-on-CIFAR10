@@ -92,7 +92,7 @@ All scripts generated with Gemini-pro 3.1. All code manually checked, data analy
 
 ## Running the Code
 
-The complete study is in `Pytorch-CIFAR10-experiments.py` script. Requires Nvidia GPU, 2GB of VRAM are enough.
+The complete study is in `Pytorch-CIFAR10-experiments.py` script. Requires Nvidia GPU, 2GB of VRAM recommended.
 
 ```bash
 python Pytorch-CIFAR10-experiments.py
