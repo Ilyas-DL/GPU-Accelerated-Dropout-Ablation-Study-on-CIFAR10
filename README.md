@@ -49,7 +49,7 @@ To maximize throughput, the dataset is loaded into GPU VRAM prior to the trainin
 
 ## Results & Visualizations
 
-The following plots detail the Training Cross-Entropy Loss and Validation Accuracy across all configurations.
+The following plots detail the Training Cross-Entropy Loss and Validation Accuracy across all configurations. All experiments performed with `torch.manual_seed(42)` for reproducibility.
 
 ![Dropout Ablation Hidden 128](plots/dropout_ablation_hidden_128.png)
 
