@@ -39,7 +39,10 @@ The forward pass is defined mathematically as:
 The forward pass becomes:
 `Output = W_2 * (Dropout(ReLU(W_1 * X + b_1), p)) + b_2`
 
-Where `p` is the probability of an element to be zeroed.
+Where `p` is the probability of an element to be zeroed. More details at:
+
+![Dropout: A Simple Way to Prevent Neural Networks from
+Overfitting](https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
 
 ## Experimental Methodology
 
@@ -49,9 +52,7 @@ The experiment analyzes the relationship between hidden layer size and dropout p
 *   **Dropout Rates Tested:** 0.0 (Reference), 0.1, 0.2, 0.3, and 0.4.
 *   **Hyperparameters:** 60 epochs per configuration, Adam optimizer, learning rate of 1e-3, and a batch size of 512.
 
-To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops. More details at:
-
-(https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
+To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops. 
 
 ### Global VRAM Usage Over Time
 Global VRAM allocation tracked throughout the execution of the entire experiment.
