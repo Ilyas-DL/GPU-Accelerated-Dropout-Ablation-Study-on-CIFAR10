@@ -49,7 +49,9 @@ The experiment analyzes the relationship between hidden layer size and dropout p
 *   **Dropout Rates Tested:** 0.0 (Reference), 0.1, 0.2, 0.3, and 0.4.
 *   **Hyperparameters:** 60 epochs per configuration, Adam optimizer, learning rate of 1e-3, and a batch size of 512.
 
-To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops.
+To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops. More details at:
+
+(https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
 
 ### Global VRAM Usage Over Time
 Global VRAM allocation tracked throughout the execution of the entire experiment.
