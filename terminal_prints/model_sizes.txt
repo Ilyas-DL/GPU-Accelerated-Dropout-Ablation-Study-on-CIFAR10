@@ -1,0 +1,4 @@
+Hidden Size: 128 | Total Params: 394,634 | Weights: 1.505 MB | Training Memory: 6.022 MB
+Hidden Size: 256 | Total Params: 789,258 | Weights: 3.011 MB | Training Memory: 12.043 MB
+Hidden Size: 512 | Total Params: 1,578,506 | Weights: 6.022 MB | Training Memory: 24.086 MB
+Hidden Size: 1024 | Total Params: 3,157,002 | Weights: 12.043 MB | Training Memory: 48.172 MB
