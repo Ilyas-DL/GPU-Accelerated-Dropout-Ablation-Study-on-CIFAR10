@@ -27,6 +27,16 @@ The project uses the standard CIFAR-10 dataset, which consists of 60,000 color i
 *   Validation Dataset VRAM: ~117.19 MB
 *   Total VRAM Required: ~703.12 MB
 
+**Estimated Model Memory (Training)**
+
+During training with the Adam optimizer in `Float32`, each parameter requires **16 bytes** of VRAM (4 bytes for the weight, 4 for the gradient, and 8 for Adam's momentum/variance states). 
+
+| Hidden Size | Total Parameters | Training Memory (MB) |
+| **128**     | 394,634          | ~6.02 MB             |
+| **256**     | 789,258          | ~12.04 MB            |
+| **512**     | 1,578,506        | ~24.09 MB            |
+| **1024**    | 3,157,002        | ~48.17 MB            |
+
 ## Model Architecture
 
 The model is a standard Single Hidden Layer Multi-Layer Perceptron (MLP). The network maps the 3072 input pixels to a specified hidden dimension, applies non-linearity, and outputs the 10 class logits.
