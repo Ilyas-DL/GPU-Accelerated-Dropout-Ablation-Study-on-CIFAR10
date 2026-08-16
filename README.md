@@ -1,4 +1,5 @@
 # GPU-Accelerated Dropout Ablation Study on CIFAR-10
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 This repository contains an end-to-end ablation study observing the regularization effects of Dropout on a Multi-Layer Perceptron (MLP) trained on the CIFAR-10 image dataset. The project heavily emphasizes PyTorch CUDA optimization, specifically by loading the entire dataset into GPU VRAM to eliminate CPU-to-GPU transfer bottlenecks during training.
 
@@ -50,16 +51,12 @@ To maximize throughput, the dataset is loaded into GPU VRAM prior to the trainin
 
 The following plots detail the Training Cross-Entropy Loss and Validation Accuracy across different dropout rates for each hidden layer dimension. As network capacity increases, the model's tendency to overfit the training data rises, increasing the necessity and effectiveness of higher dropout probabilities.
 
-### Hidden Layer Size: 128
 ![Dropout Ablation Hidden 128](plots/dropout_ablation_hidden_128.png)
 
-### Hidden Layer Size: 256
 ![Dropout Ablation Hidden 256](plots/dropout_ablation_hidden_256.png)
 
-### Hidden Layer Size: 512
 ![Dropout Ablation Hidden 512](plots/dropout_ablation_hidden_512.png)
 
-### Hidden Layer Size: 1024
 ![Dropout Ablation Hidden 1024](plots/dropout_ablation_hidden_1024.png)
 
 ### Global VRAM Usage Over Time
