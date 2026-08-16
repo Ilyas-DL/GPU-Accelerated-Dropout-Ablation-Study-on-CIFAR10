@@ -1,7 +1,7 @@
 # GPU-Accelerated Dropout Ablation Study on CIFAR-10
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-This repository contains an end-to-end ablation study observing the regularization effects of Dropout on a Multi-Layer Perceptron (MLP) trained on the CIFAR-10 image dataset. The project heavily emphasizes PyTorch CUDA optimization, specifically by loading the entire dataset into GPU VRAM to eliminate CPU-to-GPU transfer bottlenecks during training.
+This repository serves as practice to utilize GPU optimization on ML projects. This study features an ablation study of 4 different Multi-Layer Perceptron (MLP) trained on the CIFAR-10 image dataset. The goal is to observe the phenomenon of Dropout in practice to refresh first principles, but also witness the efficiency of loading the entire dataset directly into VRAM emphasizing PyTorch CUDA optimization.
 
 ## Dataset Overview
 
@@ -32,24 +32,24 @@ The forward pass is defined mathematically as:
 `Output = W_2 * (ReLU(W_1 * X + b_1)) + b_2`
 
 **With Dropout:**
-Dropout is applied immediately after the activation function to prevent complex co-adaptations on the training data. The forward pass becomes:
+The forward pass becomes:
 `Output = W_2 * (Dropout(ReLU(W_1 * X + b_1), p)) + b_2`
 
-Where `p` is the probability of an element to be zeroed. During the evaluation phase, the Dropout layer functions as an identity operator.
+Where `p` is the probability of an element to be zeroed.
 
 ## Experimental Methodology
 
-The experiment analyzes the relationship between the network capacity (hidden layer size) and the required regularization intensity (dropout probability `p`). 
+The experiment analyzes the relationship between hidden layer size and dropout probability `p`. 
 
 *   **Network Capacities Tested:** Hidden sizes of 128, 256, 512, and 1024 neurons.
 *   **Dropout Rates Tested:** 0.0 (Reference), 0.1, 0.2, 0.3, and 0.4.
 *   **Hyperparameters:** 60 epochs per configuration, Adam optimizer, learning rate of 1e-3, and a batch size of 512.
 
-To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops. Standard PyTorch DataLoaders are bypassed in favor of in-VRAM manual batch slicing and tensor shuffling.
+To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops.
 
 ## Results & Visualizations
 
-The following plots detail the Training Cross-Entropy Loss and Validation Accuracy across different dropout rates for each hidden layer dimension. As network capacity increases, the model's tendency to overfit the training data rises, increasing the necessity and effectiveness of higher dropout probabilities.
+The following plots detail the Training Cross-Entropy Loss and Validation Accuracy across all configurations.
 
 ![Dropout Ablation Hidden 128](plots/dropout_ablation_hidden_128.png)
 
@@ -60,18 +60,19 @@ The following plots detail the Training Cross-Entropy Loss and Validation Accura
 ![Dropout Ablation Hidden 1024](plots/dropout_ablation_hidden_1024.png)
 
 ### Global VRAM Usage Over Time
-To ensure the CUDA memory optimizations remain stable across multiple initializations, global VRAM allocation was tracked throughout the execution of the entire experiment. Red markers indicate the transition between different hidden layer size runs.
+Global VRAM allocation tracked throughout the execution of the entire experiment.
 
 ![Global VRAM Usage](plots/global_vram_usage_over_time.png)
 
+## Implementation Methodology and AI Assistance
+
+All scripts generated with Gemini-pro 3.1. All code manually checked, data analysis and experiments designed by me. 
+
 ## Running the Code
 
-The complete study is encapsulated within a single script. It requires a CUDA-enabled machine to run effectively.
+The complete study is in `Pytorch-CIFAR10-experiments.py` script. Requires Nvidia GPU, 2GB of VRAM are enough.
 
 ```bash
-# Clone the repository
-git clone https://github.com/Ilyas-DL/GPU-Accelerated-Dropout-Ablation-Study-on-CIFAR10.git
-cd GPU-Accelerated-Dropout-Ablation-Study-on-CIFAR10
-
 # Run the experimental script
 python Pytorch-CIFAR10-experiments.py
+```
