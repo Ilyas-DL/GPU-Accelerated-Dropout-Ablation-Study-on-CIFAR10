@@ -1,7 +1,11 @@
-# GPU-Accelerated Dropout Ablation Study on CIFAR-10
+# GPU-Accelerated Dropout Ablation Study on CIFAR10
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 This repository serves as practice to utilize GPU optimization on ML projects. This study features an ablation study of 4 different Multi-Layer Perceptron (MLP) trained on the CIFAR-10 image dataset. The goal is to observe the phenomenon of Dropout to refresh first principles, but also witness the efficiency of loading the entire dataset directly into VRAM emphasizing PyTorch CUDA optimization.
+
+## GPU Hardware
+
+All experiments conducted on local Nvidia RTX 5070 8GB VRAM laptop.
 
 ## Dataset Overview
 
@@ -47,6 +51,13 @@ The experiment analyzes the relationship between hidden layer size and dropout p
 
 To maximize throughput, the dataset is loaded into GPU VRAM prior to the training loops.
 
+### Global VRAM Usage Over Time
+Global VRAM allocation tracked throughout the execution of the entire experiment.
+
+![Global VRAM Usage](plots/global_vram_usage_over_time.png)
+
+The linear function is when the entire dataset is being loaded in the GPU. Additional 600MB added for CUDA Overhead and small additional memory due to different size models previously computed.
+
 ## Results & Visualizations
 
 The following plots detail the Training Cross-Entropy Loss and Validation Accuracy across all configurations. All experiments performed with `torch.manual_seed(42)` for reproducibility.
@@ -58,11 +69,6 @@ The following plots detail the Training Cross-Entropy Loss and Validation Accura
 ![Dropout Ablation Hidden 512](plots/dropout_ablation_hidden_512.png)
 
 ![Dropout Ablation Hidden 1024](plots/dropout_ablation_hidden_1024.png)
-
-### Global VRAM Usage Over Time
-Global VRAM allocation tracked throughout the execution of the entire experiment.
-
-![Global VRAM Usage](plots/global_vram_usage_over_time.png)
 
 ## Implementation Methodology and AI Assistance
 
