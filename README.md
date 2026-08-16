@@ -32,7 +32,7 @@ The project uses the standard CIFAR-10 dataset, which consists of 60,000 color i
 The model is a standard Single Hidden Layer Multi-Layer Perceptron (MLP). The network maps the 3072 input pixels to a specified hidden dimension, applies non-linearity, and outputs the 10 class logits.
 
 **Without Dropout (Reference Base):**
-The forward pass is defined mathematically as:
+The forward pass is:
 `Output = W_2 * (ReLU(W_1 * X + b_1)) + b_2`
 
 **With Dropout:**
