@@ -83,7 +83,7 @@ Global VRAM allocation tracked with `torch.cuda.memory_allocated()` during the e
 
 ![Global VRAM Usage](plots/global_vram_usage_over_time.png)
 
-The linear function is when the entire dataset is being loaded in the GPU. Additional 600MB added for CUDA Overhead and small additional memory due to different size models computed in `Size_models_computation.py`. All 5 experiments per hidden layer size are computed in sequence before memory is cleared and load for the next experiment. The objective is to track how VRAM usage evolves under different computations of similar size.
+The linear function is when the entire dataset is being loaded in the GPU. Additional 600MB added for CUDA Overhead and small additional memory due to different size models computed in `Size_models_computation.py`. All 5 experiments per hidden layer size are computed in sequence before memory is cleared and load for the next experiment. The objective is to track how VRAM usage evolves under different computations of similar size. The whole experiment finishes in less than 5 minutes.
 
 ## Results & Visualizations
 
