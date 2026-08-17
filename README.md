@@ -14,6 +14,7 @@ This repository serves as practice to utilize GPU optimization on ML projects. T
 ├── Size_models_computation.py         # Script to calculate parameters/sizes
 ├── LICENCE                            # Legal framework for using this code
 └── README.md                          # Project documentation
+```
 
 ## GPU Hardware
 
