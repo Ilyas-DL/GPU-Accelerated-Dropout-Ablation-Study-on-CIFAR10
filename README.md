@@ -3,6 +3,18 @@
 
 This repository serves as practice to utilize GPU optimization on ML projects. This study features an ablation study of 4 different Multi-Layer Perceptron (MLP) trained on the CIFAR-10 image dataset. The goal is to observe the phenomenon of Dropout to refresh first principles, but also witness the efficiency of loading the entire dataset directly into VRAM emphasizing PyTorch CUDA optimization.
 
+## Repository Structure
+
+```text
+.
+├── plots/                             # Output visualizations 
+├── terminal_prints/                   # Saved text terminal outputs
+├── CIFAR10-data-analysis.py           # Script for exploratory data analysis on dataset
+├── Pytorch-CIFAR10-experiments.py     # Script for running experiment
+├── Size_models_computation.py         # Script to calculate parameters/sizes
+├── LICENCE                            # Legal framework for using this code
+└── README.md                          # Project documentation
+
 ## GPU Hardware
 
 All experiments conducted on local Nvidia RTX 5070 8GB VRAM laptop.
