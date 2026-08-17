@@ -1,7 +1,7 @@
 # GPU-Accelerated Dropout Ablation Study on CIFAR10
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-This repository serves as practice to utilize GPU optimization on ML projects. This study features an ablation study of 4 different Multi-Layer Perceptron (MLP) trained on the CIFAR-10 image dataset. The goal is to observe the phenomenon of Dropout to refresh first principles, but also witness the efficiency of loading the entire dataset directly into VRAM emphasizing PyTorch CUDA optimization.
+This repository serves as practice to utilize GPU optimization on ML projects. This study features an ablation study of 5 different Multi-Layer Perceptron (MLP) trained on the CIFAR-10 image dataset. The goal is to observe the phenomenon of Dropout to refresh first principles, but also witness the efficiency of loading the entire dataset directly into VRAM emphasizing PyTorch CUDA optimization.
 
 ## Repository Structure
 
