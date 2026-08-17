@@ -81,7 +81,7 @@ To maximize throughput, the dataset is loaded into GPU VRAM prior to the trainin
 ### Global VRAM Usage Over Time
 Global VRAM allocation tracked with `torch.cuda.memory_allocated()` during the execution of the entire experiment.
 
-[Global VRAM Usage](plots/global_vram_usage_over_time.png)
+![Global VRAM Usage](plots/global_vram_usage_over_time.png)
 
 The linear function is when the entire dataset is being loaded in the GPU. Additional 600MB added for CUDA Overhead and small additional memory due to different size models computed in `Size_models_computation.py`. All 5 experiments per hidden layer size are computed in sequence before memory is cleared and load for the next experiment. The objective is to track how VRAM usage evolves under different computations of similar size.
 
@@ -89,13 +89,13 @@ The linear function is when the entire dataset is being loaded in the GPU. Addit
 
 The following plots detail the Training Cross-Entropy Loss and Validation Accuracy across all configurations. All experiments performed with `torch.manual_seed(42)` for reproducibility.
 
-[Dropout Ablation Hidden 128](plots/dropout_ablation_hidden_128.png)
+![Dropout Ablation Hidden 128](plots/dropout_ablation_hidden_128.png)
 
-[Dropout Ablation Hidden 256](plots/dropout_ablation_hidden_256.png)
+![Dropout Ablation Hidden 256](plots/dropout_ablation_hidden_256.png)
 
-[Dropout Ablation Hidden 512](plots/dropout_ablation_hidden_512.png)
+![Dropout Ablation Hidden 512](plots/dropout_ablation_hidden_512.png)
 
-[Dropout Ablation Hidden 1024](plots/dropout_ablation_hidden_1024.png)
+![Dropout Ablation Hidden 1024](plots/dropout_ablation_hidden_1024.png)
 
 We observe in all experiments that the default MLP performs best during training but does worse in validation compared to all other dropout variants.
 
